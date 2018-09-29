@@ -1,0 +1,13 @@
+runtime: go
+api_version: go1
+
+handlers:
+- url: /
+  static_files: static/index.html
+  upload: static/index.html
+  secure: always
+- url: /assets
+  static_dir: static/assets
+#all other routes
+- url: /.*
+  script: _go_app

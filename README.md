@@ -1,2 +1,2 @@
-# TwitterIOT
-Using twitter API's to access an IOT device
+# csforallvending
+Main repo for a CSForAll vending machine project.
