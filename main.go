@@ -60,6 +60,8 @@ func storeCode(w http.ResponseWriter, r *http.Request) {
 
 }
 
+//VerifyCode -- Pull the code inputed to the Raspberry Pi using the URL to Query
+//
 func verifyCode(w http.ResponseWriter, r *http.Request) {
 	//Query in the new code
 	//Don't actually store the code just grab it
@@ -78,12 +80,12 @@ func verifyCode(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Fprintf(w, "good Code", e)
+	if e.Claimed == false {
+		fmt.Fprintf(w, "good code", e)
+	} else {
+		fmt.Fprintf(w, "Code Already claimed", e)
+	}
 }
-
-//datastore.put
-//First you put the variable you are putting in
-//next is the key that leads you to that
 
 func registerTwitterUser(w http.ResponseWriter, r *http.Request) {
 	//First we need to read the twitter username/ID
@@ -106,6 +108,7 @@ func registerTwitterUser(w http.ResponseWriter, r *http.Request) {
 
 }
 
+//TestGen -- Just made for fun to test the function on how many triest it would take to get the same code twice.
 func TestGen(w http.ResponseWriter, r *http.Request) {
 	i := 0
 	duplicate := false
@@ -128,7 +131,3 @@ func TestGen(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Total runs %v", i)
 
 }
-
-//Current Goal: Is to querey the code from the url when someone puts in the code.
-//After getting the code someone puts in I will check it against every code in the database.
-//Once the code is checked and finds a match I will set the variable boolean equal to true.
