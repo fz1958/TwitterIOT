@@ -15,10 +15,10 @@ func init() {
 	http.HandleFunc("/app/twitter/code", storeCode)
 	http.HandleFunc("/app/verify", verifyCode)
 	http.HandleFunc("/app/testGen", TestGen)
+	http.HandleFunc("/app/claimcode", claimcode)
 	rand.Seed(time.Now().UnixNano())
 }
 
-//This struct will store
 type twitter struct {
 	UserName string
 	Code     string
