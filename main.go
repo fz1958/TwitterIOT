@@ -17,6 +17,7 @@ func init() {
 	http.HandleFunc("/app/testGen", TestGen)
 	http.HandleFunc("/app/claimcode", claimcode)
 	rand.Seed(time.Now().UnixNano())
+	http.HandleFunc("/app/test/crc", testCRCResponse)
 }
 
 type twitter struct {
