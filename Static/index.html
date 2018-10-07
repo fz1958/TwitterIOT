@@ -18,7 +18,7 @@
           
 		  body 
 		  {
-			  background-image: linear-gradient(45deg, #e5f4e3 0%, #003f91 100%);
+			  background-image: linear-gradient(45deg, #ff0089 0%, #003f91 30%, #7800ff 100%);
 		  }
 		  
 		  a 
@@ -36,7 +36,7 @@
 			  background-color: #e0edff;
 		  }
 		  
-		  .sticky-banner 
+		  /*.sticky-banner 
 		  {
 			  transition:bottom .3s ease;
 			  left:0;
@@ -55,7 +55,7 @@
 			  margin:0 auto;
 			  color:#fcf7f8;
 			  text-align:center
-		  }
+		  }*/
 		 
 		  .big-icon 
 		  {
@@ -69,6 +69,7 @@
           h2
           {
               text-align: center;
+              margin-bottom: 25px;
           }
           
           h5
@@ -77,12 +78,27 @@
           }
           footer
           {
-                background-color: #ffffff 
+                background-image: linear-gradient(70deg, #ffb0ff 0%,  #30bbf8 40%, #ff0089 80%);
           }
           
           #wayne
           {
               float: left;
+          }
+          
+          #footer
+          {
+              padding-bottom: 5px;
+          }
+          
+          .text-blue
+          {
+              color: white;
+          }
+          
+          .twit
+          {
+              margin: 10px;
           }
           
 	  </style>
@@ -103,32 +119,32 @@
     </div>
 		<!-- End of Nav-Bar -->
 		<!-- Header -->
-        <h2 class="text-white">
+        <h2 class="text-white display-4">
         You can use twitter to order a robot!
         </h2>
 		<!-- End of Header -->
 		<!-- Content -->
    
 		<container >
-            <h5 class="text-white">First, make sure to follow us on Twitter with the link below.</h5>
+            <h5 class="text-blue">First, make sure to follow us on Twitter with the link below.</h5>
             <div class="flex-row">
                 <div class="flex-column justify-content-center tweets" >
                     <div class="d-flex justify-content-center">
                         
                         
-        
+        <div class="twit">
 			  <a href="https://twitter.com/CSForAll?ref_src=twsrc%5Etfw" class="twitter-follow-button twitter-bootons" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        
+                        </div>
                         </div>
 				  </div>
             </div>
-            <h5 class="text-white">Now, use our hashtag and order your robot!</h5>
+            <h5 class="text-blue">Now, use our hashtag and order your robot!</h5>
             <div class="flex-row">
                 <div class="flex-column">
                     <div class="d-flex justify-content-center tweets">
-                       
+                    <div class="twit"> 
 			  <a href="https://twitter.com/intent/tweet?button_hashtag=CSForAll&ref_src=twsrc%5Etfw" class="twitter-hashtag-button twitter-bootons" data-show-count="false">Tweet #CSForAll</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                           
+                           </div>  
                         </div>
                     </div>
                          </div>
@@ -149,14 +165,11 @@
         
         
 
-      <footer class="pt-4 my-md-5 pt-md-5">
-        <div class="row">
-          <div class="col-12 col-md">
+      <footer class="pt-5 my-md-5 pt-md-3">
+        <div id="footer">
             <img src="assets/Wayne.png" id="wayne">
-            <small class="d-block mb-3 text-muted">&copy; Wayne State University 2018</small>
-          </div>
-         
-        </div>
+            <small class="d-block mb-3 text-black">&copy; Wayne State University 2018</small>
+         </div>
 		  <!-- End of Content -->
       </footer>
 
