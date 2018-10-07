@@ -26,7 +26,7 @@ func twitterhook(w http.ResponseWriter, r *http.Request) {
 		message := r.URL.Query().Get("message")
 		GetCRCResponse(secret, message, w)
 
-		//If post parse data
+		//If POST parse data
 	case http.MethodPost:
 		log.Debugf(ctx, "This is a Post method")
 		decoder := json.NewDecoder(r.Body)
@@ -43,6 +43,6 @@ func twitterhook(w http.ResponseWriter, r *http.Request) {
 		message := r.URL.Query().Get("message")
 		GetCRCResponse(secret, message, w)
 	default: //Else this gets awkward
-		log.Debugf(ctx, "Yikes this wasn't supposed to happen (Not a GET or POST)")
+		log.Debugf(ctx, "Yikes this wasn't supposed to happen (Not a GET or POST or PUT)")
 	}
 }
