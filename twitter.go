@@ -36,7 +36,12 @@ func twitterhook(w http.ResponseWriter, r *http.Request) {
 			panic(err)
 		}
 		log.Debugf(ctx, t.Test)
-
+		//When Put is called, it is asking to renew so have CRC run
+	case http.MethodPut:
+		log.Debugf(ctx, "This is a Put method")
+		secret := "8LRLAFoS7FlUE6q2hJKMG2kbtBXLPUTyl6btc1PABayI3416IV"
+		message := r.URL.Query().Get("message")
+		GetCRCResponse(secret, message, w)
 	default: //Else this gets awkward
 		log.Debugf(ctx, "Yikes this wasn't supposed to happen (Not a GET or POST)")
 	}
