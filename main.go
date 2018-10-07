@@ -16,6 +16,7 @@ func init() {
 	http.HandleFunc("/app/verify", verifyCode)
 	http.HandleFunc("/app/testGen", TestGen)
 	http.HandleFunc("/app/claimcode", claimcode)
+	http.HandleFunc("/app/twitterhook", twitterhook)
 	rand.Seed(time.Now().UnixNano())
 	http.HandleFunc("/app/test/crc", testCRCResponse)
 }
