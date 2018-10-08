@@ -109,7 +109,7 @@
 	<body>
 		<!--Begining of Nav-Bar -->
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-		 <img src="assets/Twitter_Logo_Blue.png" alt="Twitter Logo" height="40" width="40"> 
+		 <img src="/assets/Twitter_Logo_Blue.png" alt="Twitter Logo" height="40" width="40"> 
       <h5 class="my-0 mr-md-auto font-weight-normal">Twitter Vending Machine</h5>
       <nav class="my-2 my-md-0 mr-md-3">
  
@@ -120,38 +120,27 @@
 		<!-- End of Nav-Bar -->
 		<!-- Header -->
         <h2 class="text-white display-4">
-        You can use twitter to order a robot!
+        {{.Code}}
         </h2>
 		<!-- End of Header -->
 		<!-- Content -->
    
 		<container >
-            <!-- <h5 class="text-blue">First, make sure to follow us on Twitter with the link below.</h5> -->
+            <h5 class="text-blue">Enter the code above in the vending machine.</h5>
             <div class="flex-row">
                 <div class="flex-column justify-content-center tweets" >
                     <div class="d-flex justify-content-center">
                         
                         
-        <!-- <div class="twit">
-			  <a href="https://twitter.com/CSForAll?ref_src=twsrc%5Etfw" class="twitter-follow-button twitter-bootons" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        </div> -->
+      
                         </div>
 				  </div>
             </div>
-            <h5 class="text-blue">Use our hashtag and order your robot!</h5>
-            <div class="flex-row">
-                <div class="flex-column">
-                    <div class="d-flex justify-content-center tweets">
-                    <div class="twit"> 
-			  <a href="https://twitter.com/intent/tweet?button_hashtag=CSForAll&ref_src=twsrc%5Etfw" class="twitter-hashtag-button twitter-bootons" data-show-count="false">Tweet #CSForAll</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                           </div>  
-                        </div>
-                    </div>
-                         </div>
+          
             <div class="flex-row">
                 <div class="flex-column">
                     <div class="d-flex justify-content-center">
-                        <img src="assets/logo2018.png">
+                        <img src="/assets/logo2018.png">
                     </div>
                 
                 </div>
@@ -167,7 +156,7 @@
 
       <footer class="pt-5 my-md-5 pt-md-3">
         <div id="footer">
-            <img src="assets/Wayne.png" id="wayne">
+            <img src="/assets/Wayne.png" id="wayne">
             <small class="d-block mb-3 text-black">&copy; Wayne State University 2018</small>
          </div>
 		  <!-- End of Content -->

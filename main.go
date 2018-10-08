@@ -2,6 +2,7 @@ package TwitterIOT
 
 import (
 	"fmt"
+	"html/template"
 	"math/rand"
 	"net/http"
 	"time"
@@ -19,6 +20,7 @@ func init() {
 	http.HandleFunc("/app/twitterhook", twitterhook)
 	rand.Seed(time.Now().UnixNano())
 	http.HandleFunc("/app/test/crc", testCRCResponse)
+	http.HandleFunc("/app/getcode", registerTwitterUserV2)
 }
 
 type twitter struct {
@@ -109,6 +111,45 @@ func registerTwitterUser(w http.ResponseWriter, r *http.Request) {
 	}
 
 }
+
+// registerTwitterUserV2 just outputs the code.  called by javascript.
+// this function:
+//		1. generates a code
+//		2. stores the code in the database
+//		3. outputs the code to the screen
+// 		4. user can then enter the code in the URL
+//
+func registerTwitterUserV2(w http.ResponseWriter, r *http.Request) {
+
+	ctx := appengine.NewContext(r)
+	//twitterID := r.URL.Query().Get("ID")
+	twitterID := "Anonymous" // this is set to indicate that we don't know the userid
+	generateCode := CreateCode()
+	k := datastore.NewKey(ctx, kind, generateCode, 0, nil)
+	e := &twitter{
+		Code:     generateCode,
+		UserName: twitterID,
+	}
+
+	if _, err := datastore.Put(ctx, k, e); err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+
+	d := &CodePageData{
+		Code: generateCode,
+	}
+
+	if err := codepage.Execute(w, d); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+}
+
+type CodePageData struct {
+	Code string
+}
+
+var codepage, _ = template.ParseFiles("template/code.html")
 
 //TestGen -- Just made for fun to test the function on how many triest it would take to get the same code twice.
 func TestGen(w http.ResponseWriter, r *http.Request) {
