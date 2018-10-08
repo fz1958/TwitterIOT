@@ -132,9 +132,7 @@
                     <div class="d-flex justify-content-center">
                         
                         
-        <!-- <div class="twit">
-			  <a href="https://twitter.com/CSForAll?ref_src=twsrc%5Etfw" class="twitter-follow-button twitter-bootons" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        </div> -->
+
                         </div>
 				  </div>
             </div>
@@ -142,9 +140,10 @@
             <div class="flex-row">
                 <div class="flex-column">
                     <div class="d-flex justify-content-center tweets">
-                    <div class="twit"> 
-			  <a href="https://twitter.com/intent/tweet?button_hashtag=CSForAll&ref_src=twsrc%5Etfw" class="twitter-hashtag-button twitter-bootons" data-show-count="false">Tweet #CSForAll</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                           </div>  
+                    <div class="twit">
+
+						<button type="button" class="btn btn-outline-primary" onclick="myfunc()">Tweet #CSForAll</button>
+						</div>
                         </div>
                     </div>
                          </div>
@@ -158,12 +157,6 @@
             </div>
 
         </container>
-			
-        
-        
-        
-        
-        
 
       <footer class="pt-5 my-md-5 pt-md-3">
         <div id="footer">
@@ -175,4 +168,12 @@
 
 
   </body>
+  <script>
+
+	  function myfunc()
+	  {
+		let newWindow = open('https://twitter.com/intent/tweet?button_hashtag=CSForAll&ref_src=twsrc%5Etfw', 'example', 'width=300,height=300')
+        location.assign("http://twitter-vend.appspot.com/app/getcode");
+	 };
+  </script>
 </html>
